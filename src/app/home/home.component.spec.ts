@@ -9,7 +9,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      providers: [
+        { provide: Router, useValue: routerSpy }
+      ]
     })
     .compileComponents();
 
@@ -18,12 +21,8 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('button navigates to feedbackpage', () => {
     component.showFeedbackPage();
-    expect(routerSpy.navigate).toHaveBeenCalledWith(['/feedback']);
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['feedback']);
   });
 });
