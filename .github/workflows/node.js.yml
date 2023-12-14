@@ -37,7 +37,7 @@ jobs:
       with:
         name: webpack artifacts
         path: dist/angular-example-app
-    - run: ls ./dist/angular-example-app
+    - run: ls ./dist/ohjelm.keh.pros.autom
     
   publish:
       needs: build
@@ -50,7 +50,7 @@ jobs:
           uses: actions/download-artifact@v3
           with:
             name: webpack artifacts
-            path: dist/angular-example-app
+            path: dist/ohjelm.keh.pros.autom
             
         - name: Login to GHCR
           uses: docker/login-action@v3
