@@ -66,7 +66,7 @@ jobs:
           with:
             context: .
             push: true
-            tags: ghrc.io${{ env.REPO. }}:${ github.sha }
+            tags: ghrc.io${{ env.REPO }}:${ github.sha }
             file: ./Dockerfile
             
   deploy:
